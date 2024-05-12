@@ -4,6 +4,7 @@
 
 - [x] Make it deploy (vercel)
 - [x] Scaffold basic ui with mock data (shadcn/ui)
+- [x] Tidy up build process
 - [ ] Setup DB (vercel/pg)
 - [ ] Plug DB with ui
 - [ ] Add auth (clerk)
