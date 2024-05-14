@@ -1,9 +1,12 @@
 import "~/styles/globals.css";
 
-import { ClerkProvider } from "@clerk/nextjs";
-
 import { GeistSans } from "geist/font/sans";
+
+import { ClerkProvider } from "@clerk/nextjs";
+import { esES } from "@clerk/localizations";
 import { TopNav } from "./_components/topnav";
+import { cn } from "~/lib/utils";
+import { ThemeProvider } from "~/components/providers/theme-provider";
 
 export const metadata = {
   title: "Translucent Detyre",
@@ -16,12 +19,29 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log({ font: GeistSans.variable });
+
   return (
-    <ClerkProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
-        <body className="flex flex-col gap-4">
-          <TopNav />
-          {children}
+    <ClerkProvider
+      localization={esES}
+      appearance={{ elements: { footer: "hidden" } }}
+    >
+      <html lang="en" suppressHydrationWarning>
+        <body
+          className={cn(
+            "bg-background flex h-screen min-h-screen flex-col gap-4 font-sans antialiased",
+            `${GeistSans.variable}`,
+          )}
+        >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <TopNav />
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

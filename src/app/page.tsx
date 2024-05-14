@@ -1,4 +1,4 @@
-import { db } from "~/server/db";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export const dynamic = "force-dynamic";
 
@@ -21,32 +21,11 @@ const mockCarImages = [
   },
 ];
 
-const mockImages = [...mockCarImages, ...mockCarImages, ...mockCarImages].map(
-  (carImg, index) => ({
-    id: index + 1,
-    ...carImg,
-  }),
-);
-
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany();
-
-  console.log({ posts });
-
   return (
-    <main className="">
-      <div className="gap 4 flex flex-wrap px-4">
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-4 px-4">
-        {mockImages.map((image) => (
-          <div key={image.id} className="w-48 rounded-md">
-            <img src={image.url} alt={image.car} />
-          </div>
-        ))}
-      </div>
+    <main className="grid h-full content-center justify-center">
+      <SignedOut>Inicia ses&oacute;n</SignedOut>
+      <SignedIn>Seras redirigido a la p&aacute;gina de inicio</SignedIn>
     </main>
   );
 }
