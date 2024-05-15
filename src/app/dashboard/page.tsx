@@ -1,5 +1,5 @@
-import { Button } from "~/components/ui/button";
 import { db } from "~/server/db";
+import { ModuleLink } from "./_components/module-link";
 
 export const dynamic = "force-dynamic";
 
@@ -13,11 +13,7 @@ export default async function Dashboard() {
       </h4>
       <ul className="flex w-full flex-col gap-4 ">
         {sections.map((section) => (
-          <li key={section.id} className="w-full">
-            <Button className="w-full" variant="outline">
-              {section.name}
-            </Button>
-          </li>
+          <ModuleLink key={section.id} name={section.name} />
         ))}
       </ul>
     </main>
