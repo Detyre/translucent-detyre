@@ -29,7 +29,7 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
-            "bg-background flex h-screen min-h-screen flex-col gap-4 font-sans antialiased",
+            "flex h-screen min-h-screen flex-col gap-4 bg-background font-sans antialiased",
             `${GeistSans.variable}`,
           )}
         >

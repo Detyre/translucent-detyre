@@ -1,6 +1,6 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { Button } from "~/components/ui/button";
-// import { ThemeToggle } from "./theme-toggle";
+import { ThemeToggle } from "./theme-toggle";
 
 export function TopNav() {
   return (
@@ -8,7 +8,7 @@ export function TopNav() {
       <div>T. Detyre</div>
 
       <div className="flex gap-4">
-        {/* <ThemeToggle /> */}
+        <ThemeToggle />
         <SignedOut>
           <SignInButton>
             <Button variant="link"> Iniciar sesi&oacute;n</Button>
