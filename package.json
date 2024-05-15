@@ -5,11 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "build:t": "next build --turbo",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "dev:t": "next dev --turbo",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "lint": "next lint",
     "start": "next start"
   },

@@ -19,8 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log({ font: GeistSans.variable });
-
   return (
     <ClerkProvider
       localization={esES}

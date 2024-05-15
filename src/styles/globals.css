@@ -73,4 +73,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  #clerk-components {
+    @apply hidden;
+  }
+
 }
